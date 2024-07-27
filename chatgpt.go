@@ -16,14 +16,13 @@ func getUserPrompt() (string, error) {
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		prompt = scanner.Text()
-		fmt.Println(prompt)
 		break
 	}
 	if err := scanner.Err(); err != nil {
 		return "", err
 	}
 
-	prompt = ("Please analyze the follow statement, and return it in the following json format. The first field, labelled 'sentiment', that has either a 'positive', 'negative', or 'neutral' value, if it's negative or neutral, a second field labelled 'rephrased_statement', which has a rephrased version of the statement, but with positive language, and a third field labelled 'benefits', which describes the benefits of using the alternate, positive wording. Please make the rephrased statement field an empty string if the sentiment is already positive, and describe the benefits of the given statement in the beneftis section. Here is the statement: " + prompt)
+	prompt = ("Please analyze the follow statement, and return it in the following json format. The first field, labelled 'sentiment', that has either a 'positive', 'negative', or 'neutral' value, if it's negative or neutral, a second field labelled 'rephrased_statement', which has a rephrased version of the statement, but with positive language, and a third field labelled 'benefits', which describes the benefits of using the alternate, positive wording. Please make the rephrased statement field an empty string if the sentiment is already positive, and describe the benefits of the given statement in the beneftis section. Make sure to highlight why the rephrased statement is more beneficial than the negative or neutral statement, also be sure to preserve the original intended message. Here is the statement: " + prompt)
 
 	return prompt, nil
 }
@@ -72,8 +71,6 @@ func sendJSON(client *chatgpt.Client, prompt string) (*chatgpt.ChatResponse, err
 		// MaxTokens: 3000,
 		Response_Format: &enableJSON,
 	}
-
-	log.Println(request)
 
 	res, err := client.Send(ctx, &request)
 	if err != nil {

@@ -1,29 +1,32 @@
 package main
 
 import (
-	"log"
-	"net/http"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	http.HandleFunc("/view/", makeHandler(viewHandler))
-	http.HandleFunc("/edit/", makeHandler(editHandler))
-	http.HandleFunc("/save/", makeHandler(saveHandler))
+	// a gin router to handle requests
+	router := gin.Default()
+	// insert request handlers
+	// Listen at http://localhost:8080
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	router.POST("/analyzeMessage", checkAuth, analyzeMessage)
 
-	client := initiateChatGPTConnection()
+	router.Run(":8080")
 
-	prompt, err := getUserPrompt()
-	if err != nil {
-		log.Println(err)
-	}
+	//client := initiateChatGPTConnection()
 
-	response, err := sendJSON(client, prompt)
-	if err != nil {
-		log.Println(err)
-	}
+	// prompt, err := getUserPrompt()
+	// if err != nil {
+	// 	log.Println(err)
+	// }
 
-	log.Println(response.Choices[0].Message.Content)
+	// response, err := sendJSON(client, prompt)
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+
+	// log.Println(response.Choices[0].Message.Content)
+
 	//log.Println(response)
 }
