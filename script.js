@@ -10,7 +10,11 @@ function printSc() {
         }
       })
         .then((response) => response.json())
-        .then(json => document.write('JSON string: ', JSON.stringify(json)))
+        .then(json => {
+            console.log('JSON: ', json);
+            document.write('JSON string: ', JSON.stringify(json));
+            return out;
+        })
         .then((json) => console.log(json));
 
         return json
