@@ -13,7 +13,7 @@ function printSc() {
         .then(json => {
             console.log('JSON: ', json);
             document.write('JSON string: ', JSON.stringify(json));
-            return out;
+            return json;
         })
         .then((json) => console.log(json));
 
