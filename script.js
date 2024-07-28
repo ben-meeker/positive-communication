@@ -1,5 +1,5 @@
 function printSc() {
-    fetch("136.36.170.25:3056", {
+    fetch("136.36.170.25:8080/analyzeMessage", {
         method: "POST",
         body: JSON.stringify({
           prompt: "What is even that",
@@ -19,3 +19,5 @@ function printSc() {
 
         return json
 }
+
+printSc()
