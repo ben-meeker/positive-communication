@@ -1,23 +1,34 @@
 function printSc() {
-    fetch("136.36.170.25:8080/analyzeMessage", {
-        method: "POST",
-        body: JSON.stringify({
-          prompt: "What is even that",
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjUzMjIwOTQ2NTZ9.JCuVTr7XjdAoRpy1mO2vsy4Vnl_XLz4veVvMbif-7Wg"
+    const apiUrl = 'http://136.36.170.25:8080/analyzeMessage';
+    let data = {
+    prompt: 'What is even that',
+    };
+
+    const requestOptions = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjUzMjIwOTQ2NTZ9.JCuVTr7XjdAoRpy1mO2vsy4Vnl_XLz4veVvMbif-7Wg'
+    },
+    body: JSON.stringify(data),
+    };
+
+    fetch(apiUrl, requestOptions)
+    .then(response => {
+        if (!response.ok) {
+        throw new Error('Network response was not ok');
         }
-      })
-        .then((response) => response.json())
-        .then(json => {
-            console.log('JSON: ', json);
-            document.write('JSON string: ', JSON.stringify(json));
-            return json;
-        })
-        .then((json) => console.log(json));
+        return response.json();
+    })
+    .then(data => {
+        // outputElement.textContent = JSON.stringify(data, null, 2);
+        return data
+    })
+    .catch(error => {
+        console.error
 
-        return json
+    ('Error:', error);
+    });
+
+    return data
 }
-
-printSc()
