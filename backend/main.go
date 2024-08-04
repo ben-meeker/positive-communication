@@ -13,7 +13,7 @@ func main() {
 	// use CORS
 	router.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"https://ben-meeker.github.io"},
-		AllowMethods:     []string{"PUT", "PATCH"},
+		AllowMethods:     []string{"GET"},
 		AllowHeaders:     []string{"Origin"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
