@@ -5,9 +5,16 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	// load environment variables
+	err := godotenv.Load(".env")
+	if err != nil {
+		panic("Unable to read environment variables")
+	}
+
 	// a gin router to handle requests
 	router := gin.Default()
 	// use CORS

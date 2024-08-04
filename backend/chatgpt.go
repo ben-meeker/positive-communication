@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"context"
 	"fmt"
-	"log"
 	"os"
 
 	"github.com/ayush6624/go-chatgpt"
@@ -33,15 +32,15 @@ func createSentimentAnalysisPrompt(content string) string {
 	return parameters + content
 }
 
-func initiateChatGPTConnection() *chatgpt.Client {
+func initiateChatGPTConnection() (*chatgpt.Client, error) {
 	key := os.Getenv("OPENAI_KEY")
 
 	client, err := chatgpt.NewClient(key)
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
 
-	return client
+	return client, nil
 }
 
 func simpleSend(client *chatgpt.Client, prompt string) (*chatgpt.ChatResponse, error) {

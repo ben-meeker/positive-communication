@@ -9,7 +9,11 @@ import (
 )
 
 func analyzeMessage(c *gin.Context) {
-	client := initiateChatGPTConnection()
+	client, err := initiateChatGPTConnection()
+	if err != nil {
+		c.IndentedJSON(http.StatusInternalServerError, error(err))
+		return
+	}
 	var prompt prompt.Prompt
 
 	if err := c.BindJSON(&prompt); err != nil {
