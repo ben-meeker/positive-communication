@@ -8,6 +8,7 @@ function printSc() {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
+        // Token for backend API -- limited access
         'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjUzMjIwOTQ2NTZ9.JCuVTr7XjdAoRpy1mO2vsy4Vnl_XLz4veVvMbif-7Wg'
     },
     body: JSON.stringify(data),

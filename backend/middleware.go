@@ -14,6 +14,13 @@ import (
 func checkAuth(c *gin.Context) {
 
 	authHeader := c.GetHeader("Authorization")
+	originHeader := c.GetHeader("Origin")
+
+	if originHeader != "https://ben-meeker.github.io" {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Unauthorized request origin"})
+		c.AbortWithStatus(http.StatusUnauthorized)
+		return
+	}
 
 	if authHeader == "" {
 		c.JSON(http.StatusUnauthorized, gin.H{"error": "Authorization header is missing"})
