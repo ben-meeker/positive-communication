@@ -6,7 +6,7 @@ func main() {
 	// a gin router to handle requests
 	router := gin.Default()
 	// insert request handlers
-	router.POST("/analyzeMessage", checkAuth, analyzeMessage)
+	router.POST("/analyzeMessage", cors, checkAuth, analyzeMessage)
 	// listen with cert for comdotcomdotcomdotcomdotcomdotcom.com
 	router.RunTLS(":443", "fullchain.pem", "privkey.pem")
 
