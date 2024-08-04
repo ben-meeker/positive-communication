@@ -1,7 +1,7 @@
 function printSc() {
     const apiUrl = 'https://comdotcomdotcomdotcomdotcomdotcom.com/analyzeMessage';
     let data = {
-    prompt: 'What is even that',
+    "prompt": 'What is even that',
     };
 
     const requestOptions = {
