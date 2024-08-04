@@ -5,7 +5,7 @@ function printSc() {
     };
 
     const requestOptions = {
-    method: 'GET',
+    method: 'POST',
     headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjUzMjIwOTQ2NTZ9.JCuVTr7XjdAoRpy1mO2vsy4Vnl_XLz4veVvMbif-7Wg'
