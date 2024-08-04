@@ -12,7 +12,7 @@ function printSc() {
     },
     body: JSON.stringify(data),
     };
-    
+
     fetch(apiUrl, requestOptions)
     .then(response => {
         if (!response.ok) {
@@ -20,15 +20,15 @@ function printSc() {
         }
         return response.json();
     })
-    .then(data => {
-        // outputElement.textContent = JSON.stringify(data, null, 2);
-        return data
-    })
+    // .then(data => {
+    //     // outputElement.textContent = JSON.stringify(data, null, 2);
+    //     return data
+    // })
     .catch(error => {
         console.error
 
     ('Error:', error);
     });
 
-    return data
+    return response.json()
 }
