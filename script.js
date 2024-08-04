@@ -1,17 +1,18 @@
 function printSc() {
-    const apiUrl = 'http://136.36.170.25:8080/analyzeMessage';
+    const apiUrl = 'https://comdotcomdotcomdotcomdotcomdotcom.com/analyzeMessage';
     let data = {
     prompt: 'What is even that',
     };
 
     const requestOptions = {
-    method: 'POST',
+    method: 'GET',
     headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjUzMjIwOTQ2NTZ9.JCuVTr7XjdAoRpy1mO2vsy4Vnl_XLz4veVvMbif-7Wg'
     },
-    body: JSON.stringify(data),
     };
+    //body: JSON.stringify(data),
+    //};
 
     fetch(apiUrl, requestOptions)
     .then(response => {
