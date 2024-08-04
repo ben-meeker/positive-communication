@@ -12,14 +12,14 @@ func main() {
 	router := gin.Default()
 	// use CORS
 	router.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"https://foo.com"},
+		AllowOrigins:     []string{"https://ben-meeker.github.io"},
 		AllowMethods:     []string{"PUT", "PATCH"},
 		AllowHeaders:     []string{"Origin"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
-		AllowOriginFunc: func(origin string) bool {
-			return origin == "https://github.com"
-		},
+		// AllowOriginFunc: func(origin string) bool {
+		// 	return origin == "https://github.com"
+		// },
 		MaxAge: 12 * time.Hour,
 	}))
 	// insert request handlers
