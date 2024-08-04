@@ -13,20 +13,24 @@ function printSc() {
     body: JSON.stringify(data),
     };
 
-    fetch(apiUrl, requestOptions)
-    .then(response => {
-        if (!response.ok) {
-        throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    // .then(data => {
-    //     // outputElement.textContent = JSON.stringify(data, null, 2);
-    //     return data
-    // })
-    .catch(error => {
-        console.error
+    let response = fetch(apiUrl, requestOptions).then(response=>response.json())
 
-    ('Error:', error);
-    });
+    return response
+
+    // fetch(apiUrl, requestOptions)
+    // .then(response => {
+    //     if (!response.ok) {
+    //     throw new Error('Network response was not ok');
+    //     }
+    //     return response.json();
+    // })
+    // // .then(data => {
+    // //     // outputElement.textContent = JSON.stringify(data, null, 2);
+    // //     return data
+    // // })
+    // .catch(error => {
+    //     console.error
+
+    // ('Error:', error);
+    // });
 }
