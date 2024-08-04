@@ -29,6 +29,4 @@ function printSc() {
 
     ('Error:', error);
     });
-
-    return response.json()
 }
