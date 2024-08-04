@@ -1,3 +1,4 @@
 # Ignore environment file
-
 *.env
+# Ignore cert files
+*.pem
