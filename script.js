@@ -1,7 +1,7 @@
 function printSc() {
     const apiUrl = 'https://comdotcomdotcomdotcomdotcomdotcom.com/analyzeMessage';
     let data = {
-    "prompt": 'What is even that',
+    prompt: 'What is even that',
     };
 
     const requestOptions = {
@@ -10,10 +10,9 @@ function printSc() {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjUzMjIwOTQ2NTZ9.JCuVTr7XjdAoRpy1mO2vsy4Vnl_XLz4veVvMbif-7Wg'
     },
+    body: JSON.stringify(data),
     };
-    //body: JSON.stringify(data),
-    //};
-
+    
     fetch(apiUrl, requestOptions)
     .then(response => {
         if (!response.ok) {
