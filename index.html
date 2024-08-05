@@ -13,8 +13,8 @@
     <div id="sc"></div>
 </body>
 <script>
-    let value = printSc()
-    document.getElementById("sc").innerHTML = JSON.stringify(value, null, 2)
+    let response = printSc()
+    document.getElementById("sc").innerHTML = JSON.stringify(response.sentiment, null, 2)
    // document.getElementById("sc").innerHTML = value.sentiment + "\n" + value.rephrased_statement + "\n" + value.benefits
 </script>
 
