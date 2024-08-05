@@ -1,7 +1,7 @@
 function analyzeMessage() {
     const apiUrl = 'https://comdotcomdotcomdotcomdotcomdotcom.com/analyzeMessage';
     let data = {
-    prompt: 'What is even that',
+    prompt: document.getElementById("entrybox").value,
     };
 
     const requestOptions = {
@@ -22,7 +22,9 @@ function analyzeMessage() {
     })
     .then((responseData) => {
         console.log(responseData);
-        document.getElementById("sentiment").innerHTML = JSON.stringify(responseData, null, 2)
+        document.getElementById("sentiment").innerHTML = responseData.sentiment;
+        document.getElementById("rephrased_statement").innerHTML = responseData.rephrased_statement;
+        document.getElementById("benefits").innerHTML = JSON.stringify(responseData, null, 2);
         return responseData;
     })
     .catch((error) => {
