@@ -24,7 +24,7 @@ function analyzeMessage() {
         console.log(responseData);
         document.getElementById("sentiment").innerHTML = responseData.sentiment;
         document.getElementById("rephrased_statement").innerHTML = responseData.rephrased_statement;
-        document.getElementById("benefits").innerHTML = JSON.stringify(responseData, null, 2);
+        document.getElementById("benefits").innerHTML = responseData.benefits;
         return responseData;
     })
     .catch((error) => {
