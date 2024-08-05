@@ -14,6 +14,7 @@ function printSc() {
     body: JSON.stringify(data),
     };
 
+   var responseData;
     fetch(apiUrl, requestOptions)
     .then((response) => {
         if (!response.ok) {
