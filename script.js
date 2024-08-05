@@ -1,4 +1,4 @@
-function printSc() {
+function analyzeMessage() {
     const apiUrl = 'https://comdotcomdotcomdotcomdotcomdotcom.com/analyzeMessage';
     let data = {
     prompt: 'What is even that',
@@ -22,27 +22,10 @@ function printSc() {
     })
     .then((responseData) => {
         console.log(responseData);
-        document.getElementById("sc").innerHTML = JSON.stringify(responseData, null, 2)
+        document.getElementById("sentiment").innerHTML = JSON.stringify(responseData, null, 2)
         return responseData;
     })
     .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
     });
-
-    // fetch(apiUrl, requestOptions)
-    // .then(response => {
-    //     if (!response.ok) {
-    //     throw new Error('Network response was not ok');
-    //     }
-    //     return response.json();
-    // })
-    // // .then(data => {
-    // //     // outputElement.textContent = JSON.stringify(data, null, 2);
-    // //     return data
-    // // })
-    // .catch(error => {
-    //     console.error
-
-    // ('Error:', error);
-    // });
 }
