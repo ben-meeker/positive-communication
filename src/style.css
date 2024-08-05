@@ -9,6 +9,11 @@ body {
     align-items: center;
     flex-direction: column;
   }
+
+  .description {
+    color: white;
+    font-size: 75px;
+  }
   
   #breathing-text {
       width: 100%;
@@ -105,6 +110,10 @@ body {
     color: #e2d4f7;
   }
   
+  textarea {
+    resize: none;
+  }
+
   .smallbox {
     min-height: 25px;
     height: auto;
