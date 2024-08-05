@@ -22,7 +22,7 @@ function printSc() {
     })
     .then((responseData) => {
         console.log(responseData);
-        document.getElementById("sc").innerHTML = JSON.stringify(response.sentiment, null, 2)
+        document.getElementById("sc").innerHTML = JSON.stringify(response, null, 2)
         return responseData;
     })
     .catch((error) => {
