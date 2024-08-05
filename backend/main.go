@@ -19,7 +19,7 @@ func main() {
 	router := gin.Default()
 	// use CORS
 	router.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"https://ben-meeker.github.io"},
+		AllowOrigins:     []string{"https://ben-meeker.github.io", "https://thehappinessgang.com"},
 		AllowMethods:     []string{"POST"},
 		AllowHeaders:     []string{"*"},
 		ExposeHeaders:    []string{"Content-Length"},
