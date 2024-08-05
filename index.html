@@ -10,12 +10,7 @@
 </head>
 
 <body>
+    <button onclick="printSc()">Click me</button>
     <div id="sc"></div>
 </body>
-<script>
-    let response = printSc()
-    document.getElementById("sc").innerHTML = JSON.stringify(response.sentiment, null, 2)
-   // document.getElementById("sc").innerHTML = value.sentiment + "\n" + value.rephrased_statement + "\n" + value.benefits
-</script>
-
 </html>
