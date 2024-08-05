@@ -12,7 +12,10 @@ body {
 
   .description {
     color: white;
-    font-size: 75px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   #breathing-text {
