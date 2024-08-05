@@ -22,7 +22,7 @@ function analyzeMessage() {
     })
     .then((responseData) => {
         console.log(responseData);
-        document.getElementById("sentiment").innerHTML = responseData.sentiment;
+        document.getElementById("sentiment").innerHTML = responseData.sentiment.charAt(0).toUpperCase() + responseData.sentiment.substring(1).toLowerCase();
         document.getElementById("rephrased_statement").innerHTML = responseData.rephrased_statement;
         document.getElementById("benefits").innerHTML = responseData.benefits;
         return responseData;
