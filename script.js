@@ -14,7 +14,6 @@ function printSc() {
     body: JSON.stringify(data),
     };
 
-   var responseData;
     fetch(apiUrl, requestOptions)
     .then((response) => {
         if (!response.ok) {
@@ -23,11 +22,11 @@ function printSc() {
     })
     .then((responseData) => {
         console.log(responseData);
+        return responseData;
     })
     .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
     });
-    return responseData
 
     // fetch(apiUrl, requestOptions)
     // .then(response => {
