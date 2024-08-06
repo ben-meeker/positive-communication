@@ -1,4 +1,17 @@
+// Disable button if no text
+const confirm = document.getElementById("confirm");
+const entrybox = document.getElementById("entrybox");
+textarea.addEventListener('entrybox', () => {
+  confirm.disabled = entrybox.value == '';
+});
+
+// Run when button clicked
 function analyzeMessage() {
+    var loader = document.createElement('div')
+    loader.classList.add('spinner')
+    loader.id = 'loader'
+    document.getElementById("confirm").disabled = true;
+
     const apiUrl = 'https://comdotcomdotcomdotcomdotcomdotcom.com/analyzeMessage';
     let data = {
     prompt: document.getElementById("entrybox").value,
@@ -30,4 +43,8 @@ function analyzeMessage() {
     .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
     });
+
+    var body = document.getElementsByTagName('body')[0];
+    body.removeChild(loader)
+    document.getElementById("confirm").disabled = false;
 }
