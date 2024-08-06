@@ -1,7 +1,7 @@
 // Disable button if no text
 const confirm = document.getElementById("confirm");
 const entrybox = document.getElementById("entrybox");
-textarea.addEventListener('entrybox', () => {
+entrybox.addEventListener('entrybox', () => {
   confirm.disabled = entrybox.value == '';
 });
 
