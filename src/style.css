@@ -210,12 +210,14 @@ body {
       .smallbox {
         width: 100%;
         max-width: 100%;
+        font-size: .75rem;
       }
     
       .entrybox, .bigbox {
         width: 100%;
         max-width: 100%;
         background-size: contain;
+        font-size: .75rem;
       }
     
     .description {
