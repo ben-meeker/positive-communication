@@ -2,7 +2,7 @@
 const confirm = document.getElementById("confirm");
 const entrybox = document.getElementById("entrybox");
 entrybox.addEventListener('input', () => {
-  confirm.disabled = entrybox.value == '';
+    document.body.style.pointerEvents = 'none'
 });
 
 // Run when button clicked
@@ -11,7 +11,7 @@ function analyzeMessage() {
     loader.classList.add('spinner')
     loader.id = 'loader'
     document.body.appendChild(loader);
-    document.getElementById("confirm").disabled = true;
+    document.body.style.pointerEvents = 'none'
 
     const apiUrl = 'https://comdotcomdotcomdotcomdotcomdotcom.com/analyzeMessage';
     let data = {
@@ -40,7 +40,7 @@ function analyzeMessage() {
         document.getElementById("rephrased_statement").innerHTML = responseData.rephrased_statement;
         document.getElementById("benefits").innerHTML = responseData.benefits;
         document.body.removeChild(loader);
-        document.getElementById("confirm").disabled = false;
+        document.body.style.pointerEvents = 'auto'
         return responseData;
     })
     .catch((error) => {

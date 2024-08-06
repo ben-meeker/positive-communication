@@ -236,7 +236,7 @@ body {
   .spinner {
     position: absolute;
     left: 50% -60px;
-    top: 68%;
+    top: 57%;
     height:60px;
     width:60px;
     margin:0px auto;
@@ -244,10 +244,10 @@ body {
     -moz-animation: rotation .8s infinite linear;
     -o-animation: rotation .8s infinite linear;
     animation: rotation .8s infinite linear;
-    border-left:6px solid #581fad;
-    border-right:6px solid #581fad;
-    border-bottom:6px solid #581fad;
-    border-top:6px solid #ff80ff;
+    border-left:6px solid #ff80ff47;
+    border-right:6px solid #ff80ff47;
+    border-bottom:6px solid #ff80ff47;
+    border-top:6px solid #ff80fffc;
     border-radius:100%;
  }
  
