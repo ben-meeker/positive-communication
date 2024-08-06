@@ -1,7 +1,7 @@
 // Disable button if no text
 const confirm = document.getElementById("confirm");
 const entrybox = document.getElementById("entrybox");
-entrybox.addEventListener('entrybox', () => {
+entrybox.addEventListener('input', () => {
   confirm.disabled = entrybox.value == '';
 });
 
@@ -39,12 +39,11 @@ function analyzeMessage() {
         document.getElementById("sentiment").innerHTML = responseData.sentiment.charAt(0).toUpperCase() + responseData.sentiment.substring(1).toLowerCase();
         document.getElementById("rephrased_statement").innerHTML = responseData.rephrased_statement;
         document.getElementById("benefits").innerHTML = responseData.benefits;
+        document.body.removeChild(loader);
+        document.getElementById("confirm").disabled = false;
         return responseData;
     })
     .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
     });
-
-    document.body.removeChild(loader);
-    document.getElementById("confirm").disabled = false;
 }
