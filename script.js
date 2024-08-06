@@ -10,6 +10,7 @@ function analyzeMessage() {
     var loader = document.createElement('div')
     loader.classList.add('spinner')
     loader.id = 'loader'
+    document.body.appendChild(loader);
     document.getElementById("confirm").disabled = true;
 
     const apiUrl = 'https://comdotcomdotcomdotcomdotcomdotcom.com/analyzeMessage';
@@ -44,7 +45,6 @@ function analyzeMessage() {
         console.error("There was a problem with the fetch operation:", error);
     });
 
-    var body = document.getElementsByTagName('body')[0];
-    body.removeChild(loader)
+    document.body.removeChild(loader);
     document.getElementById("confirm").disabled = false;
 }
